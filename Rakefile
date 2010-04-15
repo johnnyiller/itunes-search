@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "itunes-search"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Itunes Search}
+    gem.description = %Q{Pretty simple interface for the itunes search api}
     gem.email = "jeff.durand@gmail.com"
     gem.homepage = "http://github.com/johnnyiller/itunes-search"
     gem.authors = ["jeff durand"]
