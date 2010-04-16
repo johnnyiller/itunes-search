@@ -1,22 +1,22 @@
-module ItunesSearch
+require 'rubygems'
+require 'net/http'
+require 'uri'
+require 'json'
+require "cgi"
 
-  $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-  $LOAD_PATH.unshift(File.dirname(__FILE__))
 
- # require '*'
-  require 'hash_extension'
-  require 'net/http'
-  require 'uri'
-  require 'json'
-  require 'search'
-  require 'result'
-
-  ENDPOINT = "http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/wsSearch"
-
-  class Base
-   
-    def search(*args)
-      return ItunesSearch::Search.new(*args)  
-    end  
-  end
+class Hash
+  def to_url_params
+    elements = []
+    keys.size.times do |i|
+      elements << "#{CGI::escape(keys[i])}=#{CGI::escape(values[i])}"
+    end
+    elements.join('&')
+  end 
 end
+ 
+
+directory = File.expand_path(File.dirname(__FILE__))
+require File.join(directory,"itunes-search", "base")
+require File.join(directory,"itunes-search","search")
+require File.join(directory,"itunes-search","result")
