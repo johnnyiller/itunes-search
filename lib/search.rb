@@ -27,7 +27,7 @@ module ItunesSearch
     end
     def results 
       ra = []
-      ra = self.to_hash["results"].collect {|r| Result.new(r)} unless self.to_hash["results"].empty?
+      ra = self.to_hash["results"].collect {|r| ItunesSearch::Result.new(r)} unless self.to_hash["results"].empty?
       return ra
     end
     
