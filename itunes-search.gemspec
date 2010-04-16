@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{itunes-search}
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["jeff durand"]
@@ -24,10 +24,10 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "itunes-search.gemspec",
-     "lib/hash_extension.rb",
      "lib/itunes-search.rb",
-     "lib/result.rb",
-     "lib/search.rb",
+     "lib/itunes-search/base.rb",
+     "lib/itunes-search/result.rb",
+     "lib/itunes-search/search.rb",
      "test/helper.rb",
      "test/test_itunes-search.rb"
   ]
