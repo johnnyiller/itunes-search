@@ -1,6 +1,27 @@
 = itunes-search
 
-Description goes here.
+This was created for use on musicxray.com if you think you can do better send your resume to jeff at musicxray.com
+
+== Installation
+
+	gem install itunes-search
+	
+== Usage
+	
+	base = Itunes::Base.new
+	
+	search_object = base.search("term"=>"The Killers")
+	
+	# get an array of the search_objects
+	
+	results = search_object.results
+	
+	results.each do |result|
+		puts result.trackViewUrl
+	end
+	
+	puts result.attributes
+
 
 == Note on Patches/Pull Requests
  

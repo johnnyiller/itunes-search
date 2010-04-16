@@ -6,11 +6,11 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "itunes-search"
     gem.summary = %Q{Itunes Search}
-    gem.description = %Q{Pretty simple interface for the itunes search api}
+    gem.description = %Q{Pretty simple interface for the itunes search api will return results as array of results objects and offer reasonable accessor methods variables}
     gem.email = "jeff.durand@gmail.com"
     gem.homepage = "http://github.com/johnnyiller/itunes-search"
     gem.authors = ["jeff durand"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_development_dependency "shoulda", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
