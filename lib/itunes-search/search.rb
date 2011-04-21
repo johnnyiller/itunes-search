@@ -23,11 +23,20 @@ module ItunesSearch
     end
     def fetch
       puts "#{ItunesSearch::ENDPOINT}?#{self.options.to_url_params}"
-      self.json = Net::HTTP.get(URI.parse("#{ItunesSearch::ENDPOINT}?#{self.options.to_url_params}")).to_s
+      uri = URI.parse("#{ItunesSearch::ENDPOINT}?#{self.options.to_url_params}")
+      http = Net::HTTP.new(uri.host,uri.port)
+      http.open_timeout=5
+      http.read_timeout=5
+      req = Net::HTTP::Get.new(uri.path)
+      resp = http.start do |http|
+        http.request(req)
+      end
+      self.json=resp.body
     end
     def results 
       ra = []
       ra = self.to_hash["results"].collect {|r| ItunesSearch::Result.new(r)} unless self.to_hash["results"].empty?
+      puts ra.inspect
       return ra
     end
     
