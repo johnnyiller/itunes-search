@@ -22,14 +22,12 @@ module ItunesSearch
       original_method_missing method_name, args
     end
     def fetch
-      puts "#{ItunesSearch::ENDPOINT}?#{self.options.to_url_params}"
+      #puts "#{ItunesSearch::ENDPOINT}?#{self.options.to_url_params}"
       uri = URI.parse("#{ItunesSearch::ENDPOINT}?#{self.options.to_url_params}")
-      http = Net::HTTP.new(uri.host,uri.port)
-      http.open_timeout=5
-      http.read_timeout=5
-      req = Net::HTTP::Get.new(uri.path)
-      resp = http.start do |http|
-        http.request(req)
+      resp = Net::HTTP.start(uri.host,uri.port) do |http|
+        http.open_timeout=5
+        http.read_timeout=5
+        http.get("#{uri.path}?#{self.options.to_url_params}")
       end
       self.json=resp.body
     end
