@@ -10,6 +10,7 @@ module ItunesSearch
         self.options.merge!(arg)
       end
     end
+
     def method_missing(method_name,*args)
       if args.size == 1
         self.options.merge!({"#{method_name.to_s.gsub("=","")}"=>args.first.to_s})
@@ -21,21 +22,29 @@ module ItunesSearch
       end
       original_method_missing method_name, args
     end
+
     def fetch
       #puts "#{ItunesSearch::ENDPOINT}?#{self.options.to_url_params}"
+      if ENV['http_proxy']
+        proxy_uri = URI.parse(ENV['http_proxy'])
+        http = Net::HTTP.Proxy(proxy_uri.host, proxy_uri.port)
+      else
+        http = Net::HTTP
+      end
+      
       uri = URI.parse("#{ItunesSearch::ENDPOINT}?#{self.options.to_url_params}")
-      resp = Net::HTTP.start(uri.host,uri.port) do |http|
+      resp = http.start(uri.host,uri.port) do |http|
         http.open_timeout=5
         http.read_timeout=5
         http.get("#{uri.path}?#{self.options.to_url_params}")
       end
-      self.json=resp.body
+      self.json = resp.body
     end
+
     def results 
       ra = []
-      ra = self.to_hash["results"].collect {|r| ItunesSearch::Result.new(r)} unless self.to_hash["results"].empty?
-      puts ra.inspect
-      return ra
+
+      self.to_hash["results"].collect {|r| ItunesSearch::Result.new(r)} unless self.to_hash["results"].empty?
     end
     
     def to_hash
