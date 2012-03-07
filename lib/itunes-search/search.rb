@@ -34,7 +34,6 @@ module ItunesSearch
     def results 
       ra = []
       ra = self.to_hash["results"].collect {|r| ItunesSearch::Result.new(r)} unless self.to_hash["results"].empty?
-      puts ra.inspect
       return ra
     end
     
