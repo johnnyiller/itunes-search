@@ -7,21 +7,20 @@ This was created for use on musicxray.com if you think you can do better send yo
 	gem install itunes-search
 	
 == Usage
-        <code>
-	base = Itunes::Base.new
-	
-	search_object = base.search("term"=>"The Killers")
-        </code>
+<code>
+base = Itunes::Base.new
+search_object = base.search("term"=>"The Killers")
+</code>
 	
 	# get an array of the search_objects
-        <code>
-	results = search_object.results
-	results.each do |result|
-		puts result.trackViewUrl
-	end
+<code>
+results = search_object.results
+results.each do |result|
+puts result.trackViewUrl
+end
 	
-	puts result.attributes
-        </code>
+puts result.attributes
+</code>
 
 
 == Note on Patches/Pull Requests
