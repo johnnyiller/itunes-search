@@ -5,7 +5,7 @@ module ItunesSearch
     attr_accessor :options, :result_hash, :json
     
     def initialize(*args)
-      @options = args.inject({}) { |result, element| element.merge(result); element  }
+      @options = args.inject({}) { |element, result| result.merge(element); result  }
     end
     
     def results
