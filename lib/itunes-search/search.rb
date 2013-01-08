@@ -8,10 +8,8 @@ module ItunesSearch
       @options = args.inject({}) { |result, element| element.merge(result); element  }
     end
     
-    def results 
-      ra = []
-      ra = to_hash["results"].collect {|r| OpenStruct.new(r) } unless to_hash["results"].empty?
-      return ra
+    def results
+      to_hash.empty? ? [] : to_hash["results"].collect { |r| OpenStruct.new(r) } 
     end
 
     protected
