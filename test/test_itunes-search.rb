@@ -9,6 +9,11 @@ class TestItunesSearch < Test::Unit::TestCase
     setup do 
       @base = Base.new()
     end
+    context "module method" do 
+      should "be able to search without creating object" do
+        assert search("term"=>"The Killers").results.first.trackViewUrl!=""
+      end
+    end
     context "Band exists on itunes" do 
       setup do 
         @so = @base.search("term"=>"The Killers")
