@@ -40,6 +40,8 @@ Gem::Specification.new do |s|
      "test/test_itunes-search.rb"
   ]
 
+  s.add_development_dependency('jeweler')
+
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
