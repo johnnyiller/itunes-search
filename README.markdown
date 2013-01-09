@@ -5,24 +5,25 @@ This was created for use on musicxray.com if you think you can do better send yo
 [![Build Status](https://travis-ci.org/johnnyiller/itunes-search.png?branch=master)](https://travis-ci.org/johnnyiller/itunes-search)
 
 ##Installation
-
+<pre>
 gem install itunes-search
+</pre>
 	
 ##Usage
-<code>
-base = Itunes::Base.new
-search_object = base.search("term"=>"The Killers")
-</code>
-	
-<code>
-results = search_object.results
-results.each do |result|
-puts result.trackViewUrl
-end
-	
-puts result.attributes
-</code>
+```ruby
+require 'itunes-search'
 
+base = Itunes::Base.new
+
+search_object = base.search("term"=>"The Killers")
+
+results = search_object.results
+
+results.each do |result|
+  puts result.trackViewUrl
+end
+```
+	
 
 ##Note on Patches/Pull Requests
  
