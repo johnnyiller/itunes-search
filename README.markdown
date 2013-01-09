@@ -13,11 +13,8 @@ gem install itunes-search
 ```ruby
 require 'itunes-search'
 
-base = Itunes::Base.new
 
-search_object = base.search("term"=>"The Killers")
-
-results = search_object.results
+results = ItunesSearch.search("term"=>"The Killers").results
 
 results.each do |result|
   puts result.trackViewUrl
