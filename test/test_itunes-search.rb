@@ -9,6 +9,13 @@ class TestItunesSearch < Test::Unit::TestCase
     setup do 
       @base = Base.new()
     end
+    context "change endpoint proxy" do 
+      should "be able to set endpoint" do
+        ItunesSearch.endpoint = "http://localhost.com"
+        assert_equal "http://localhost.com", ItunesSearch.endpoint
+        ItunesSearch.endpoint = nil
+      end
+    end
     context "module method" do 
       should "be able to search without creating object" do
         assert search("term"=>"The Killers").results.first.trackViewUrl!=""
