@@ -6,6 +6,8 @@ This was created for use on musicxray.com if you think you can do better send yo
 
 [![Dependency Status](https://gemnasium.com/johnnyiller/itunes-search.png)](https://gemnasium.com/johnnyiller/itunes-search)
 
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/johnnyiller/itunes-search)
+
 ##Installation
 <pre>
 gem install itunes-search
