@@ -2,6 +2,8 @@
 
 This was created for use on musicxray.com if you think you can do better send your resume to jeff at musicxray.com
 
+[![Build Status](https://travis-ci.org/johnnyiller/itunes-search.png?branch=master)](https://travis-ci.org/johnnyiller/itunes-search)
+
 == Installation
 
 	gem install itunes-search
