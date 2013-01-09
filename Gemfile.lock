@@ -19,7 +19,6 @@ GEM
       metaclass (~> 0.0.1)
     multi_json (1.5.0)
     rake (10.0.3)
-    rcov (0.9.11)
     rdoc (3.12)
       json (~> 1.4)
     shoulda (3.3.2)
@@ -36,6 +35,5 @@ PLATFORMS
 DEPENDENCIES
   bundler
   jeweler (~> 1.8.4)
-  rcov (= 0.9.11)
   rdoc (~> 3.12)
   shoulda

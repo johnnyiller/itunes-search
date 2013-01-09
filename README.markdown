@@ -2,11 +2,7 @@
 
 This was created for use on musicxray.com if you think you can do better send your resume to jeff at musicxray.com
 
-[![Build Status](https://travis-ci.org/johnnyiller/itunes-search.png?branch=master)](https://travis-ci.org/johnnyiller/itunes-search)
-
-[![Dependency Status](https://gemnasium.com/johnnyiller/itunes-search.png)](https://gemnasium.com/johnnyiller/itunes-search)
-
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/johnnyiller/itunes-search)
+[![Build Status](https://travis-ci.org/johnnyiller/itunes-search.png?branch=master)](https://travis-ci.org/johnnyiller/itunes-search)[![Dependency Status](https://gemnasium.com/johnnyiller/itunes-search.png)](https://gemnasium.com/johnnyiller/itunes-search)[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/johnnyiller/itunes-search)
 
 ##Installation
 <pre>
