@@ -4,6 +4,8 @@ This was created for use on musicxray.com if you think you can do better send yo
 
 [![Build Status](https://travis-ci.org/johnnyiller/itunes-search.png?branch=master)](https://travis-ci.org/johnnyiller/itunes-search)
 
+[![Dependency Status](https://gemnasium.com/johnnyiller/itunes-search.png)](https://gemnasium.com/johnnyiller/itunes-search)
+
 ##Installation
 <pre>
 gem install itunes-search
